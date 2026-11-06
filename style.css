@@ -1,0 +1,92 @@
+/* =========================================================
+   VYSHNAV M — EXECUTIVE DARK PORTFOLIO STYLES & ANIMATIONS
+   ========================================================= */
+
+/* Custom Dark Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #090D16;
+}
+::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #06B6D4;
+}
+
+/* Subtle Ambient Glow Blobs */
+.ambient-glow {
+    position: fixed;
+    width: 520px;
+    height: 520px;
+    border-radius: 9999px;
+    filter: blur(140px);
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-1 {
+    top: -120px;
+    left: -120px;
+    background: radial-gradient(circle, #06b6d4, #3b82f6);
+}
+
+.glow-2 {
+    bottom: -150px;
+    right: -120px;
+    background: radial-gradient(circle, #6366f1, #06b6d4);
+}
+
+/* Glassmorphism Surface */
+.glass-card {
+    background: rgba(17, 24, 39, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(51, 65, 85, 0.55);
+}
+
+/* Smooth Card Lift Micro-Interaction */
+.hover-card {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.28s ease,
+                box-shadow 0.28s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(6, 182, 212, 0.45);
+    box-shadow: 0 16px 36px -12px rgba(6, 182, 212, 0.14);
+}
+
+/* Certificate Filter Tab Buttons */
+.filter-btn {
+    transition: all 0.22s ease;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #06b6d4, #2563eb);
+    color: #090D16;
+    font-weight: 700;
+    border-color: transparent;
+    box-shadow: 0 6px 20px -4px rgba(6, 182, 212, 0.35);
+}
+
+/* Certificate Card Filtering Animation */
+@keyframes certFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.cert-card-animate {
+    animation: certFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
